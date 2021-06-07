@@ -2,19 +2,88 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Cypher Query Language",
 	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
+		{ "include": "#keywords" },
+		{ "include": "#classes" },
+		{ "include": "#constants" },
+		{ "include": "#numbers" },
+		{ "include": "#nodes" },
+		{ "include": "#functions" },
+		{ "include": "#variables" },
+		{ "include": "#objects" },
+		{ "include": "#strings" }
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.cypher",
-				"match": "\\b(?i)(match|optional|with|call|yield|where|foreach|and|or|as|return|distinct|case|when |end|is|then|else)\\b"
+				"match": "\\b(?<!\\.)(?i)(match|optional|with|call|yield|where|foreach|and|or|as|return|distinct|case|when|end|is|then|else|limit|create|merge|on|update|set)\\b"
 			}]
+		},
+		"classes": {
+			"patterns": [{
+				"name": "support.class.cypher",
+				"match": "\\b(?i)(apoc)\\b"
+			}]
+		},
+		"constants": {
+			"patterns": [{
+				"name": "constant.language.cypher",
+				"match": "\\b(?i)(true|false)\\b"
+			}]
+		},
+		"numbers": {
+			"patterns": [{
+				"name": "constant.numeric",
+				"match": "\\b[0-9]+\\b"
+			}]
+		},
+		"nodes": {
+			"name": "meta.node.cypher",
+			"begin": "(?<=\\w\\s)\\(",
+			"end": "\\)",
+			"patterns": [
+				{
+					"name": "entity.name.variable.cypher",
+					"match": "\\w+"
+				},
+				{ "include": "#functions" },
+				{ "include": "#objects" }
+			]
+		},
+		"functions": {
+			"name": "meta.function.cypher",
+			"begin": "(\\w+)(?=\\()",
+			"end": "\\)",
+			"beginCaptures": {
+				"0": {
+					"name": "support.function"
+				}
+			},
+			"patterns": [
+				{ "include": "#strings" },
+				{ "include": "#variables" },
+				{ "include": "#objects" },
+				{ "include": "#numbers" }
+			]
+		},
+		"variables": {
+			"patterns": [{
+				"name": "entity.name.variable.cypher",
+				"match": "\\w+"
+			}]
+		},
+		"objects": {
+			"name": "meta.object.cypher",
+			"begin": "{",
+			"end": "}",
+			"patterns": [
+				{
+					"name": "entity.name.tag.cypher",
+					"match": "\\w+(\\s?):"
+				},
+				{ "include": "#numbers" },
+				{ "include": "#variables" }
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.cypher",
