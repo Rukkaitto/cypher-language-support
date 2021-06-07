@@ -8,12 +8,16 @@
     },
     "publisher": "LucasGoudin",
     "icon": "images/cypher-icon.png",
+    "activationEvents": [
+        "onLanguage:cypher"
+    ],
     "engines": {
         "vscode": "^1.56.0"
     },
     "categories": [
         "Programming Languages"
     ],
+    "main": "./src/extension.js",
     "contributes": {
         "languages": [
             {
@@ -34,6 +38,23 @@
                 "scopeName": "source.cypher",
                 "path": "./syntaxes/cypher.tmLanguage.json"
             }
+        ],
+        "commands": [
+            {
+                "command": "extension.cypher-language-support",
+                "title": "Cypher Language Support"
+            }
         ]
+    },
+    "devDependencies": {
+        "@types/node": "^15.12.1",
+        "@types/vscode": "^1.56.0",
+        "tslint": "^6.1.3",
+        "typescript": "^4.3.2"
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./ --outDir ./out"
     }
 }
