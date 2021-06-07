@@ -3,6 +3,7 @@
     "displayName": "Cypher Language Support",
     "description": "Syntax Highlighting and auto-completion for the Cypher Query Language.",
     "version": "0.0.1",
+    "publisher": "LucasGoudin",
     "engines": {
         "vscode": "^1.56.0"
     },
@@ -10,16 +11,25 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "cypher",
-            "aliases": ["Cypher Query Language", "cypher"],
-            "extensions": [".cypher"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "cypher",
-            "scopeName": "source.cypher",
-            "path": "./syntaxes/cypher.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "cypher",
+                "aliases": [
+                    "Cypher Query Language",
+                    "cypher"
+                ],
+                "extensions": [
+                    ".cypher"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "cypher",
+                "scopeName": "source.cypher",
+                "path": "./syntaxes/cypher.tmLanguage.json"
+            }
+        ]
     }
 }
