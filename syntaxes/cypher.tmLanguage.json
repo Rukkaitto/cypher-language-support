@@ -18,6 +18,9 @@
 			"include": "#nodes"
 		},
 		{
+			"include": "#relationships"
+		},
+		{
 			"include": "#functions"
 		},
 		{
@@ -73,8 +76,7 @@
 					"match": "(?<=:)\\b\\w+"
 				},
 				{
-					"name": "entity.name.variable.cypher",
-					"match": "\\w+"
+					"include": "#variables"
 				},
 				{
 					"include": "#functions"
@@ -84,6 +86,20 @@
 				},
 				{
 					"include": "#strings"
+				}
+			]
+		},
+		"relationships": {
+			"name": "meta.relationship.cypher",
+			"begin": "(\\[(?=\\w+\\]))|(\\[(?=:[A-Z]\\w*\\]))|(\\[(?=\\b\\w+\\b:[A-Z]\\w*\\]))",
+			"end": "((?<=\\[\\w+)\\])|((?<=\\[:[A-Z]\\w*)\\])|((?<=\\[\\b\\w+\\b:[A-Z]\\w*)\\])",
+			"patterns": [
+				{
+					"name": "markup.bold",
+					"match": "(?<=:)\\b\\w+"
+				},
+				{
+					"include": "#variables"
 				}
 			]
 		},
