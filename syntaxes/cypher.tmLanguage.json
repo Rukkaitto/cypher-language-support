@@ -2,52 +2,89 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Cypher Query Language",
 	"patterns": [
-		{ "include": "#keywords" },
-		{ "include": "#classes" },
-		{ "include": "#constants" },
-		{ "include": "#numbers" },
-		{ "include": "#nodes" },
-		{ "include": "#functions" },
-		{ "include": "#variables" },
-		{ "include": "#objects" },
-		{ "include": "#strings" }
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#classes"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#nodes"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#objects"
+		},
+		{
+			"include": "#strings"
+		}
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.cypher",
-				"match": "\\b(?<!\\.)(?i)(match|optional|with|call|yield|where|foreach|and|or|as|return|distinct|case|when|end|is|then|else|limit|create|merge|on|update|set)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.cypher",
+					"match": "\\b(?<!\\.)(?i)(match|optional|with|call|yield|where|foreach|and|or|as|return|distinct|case|when|end|is|then|else|limit|create|merge|on|update|set|order|by|asc|desc)\\b"
+				}
+			]
 		},
 		"classes": {
-			"patterns": [{
-				"name": "support.class.cypher",
-				"match": "\\b(?i)(apoc)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "support.class.cypher",
+					"match": "\\b(?i)(apoc)\\b"
+				}
+			]
 		},
 		"constants": {
-			"patterns": [{
-				"name": "constant.language.cypher",
-				"match": "\\b(?i)(true|false)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "constant.language.cypher",
+					"match": "\\b(?i)(true|false)\\b"
+				}
+			]
 		},
 		"numbers": {
-			"patterns": [{
-				"name": "constant.numeric",
-				"match": "\\b[0-9]+\\b"
-			}]
+			"patterns": [
+				{
+					"name": "constant.numeric",
+					"match": "\\b[0-9]+\\b"
+				}
+			]
 		},
 		"nodes": {
 			"name": "meta.node.cypher",
-			"begin": "(?<=\\w\\s)\\(",
-			"end": "\\)",
+			"begin": "(\\((?=\\b\\w+\\b:[A-Z]\\w*\\s+{.*}\\)))|(\\((?=\\w+\\)))|(\\((?=:[A-Z]\\w*\\)))|(\\((?=\\b\\w+\\b:[A-Z]\\w*\\)))",
+			"end": "((?<=\\(\\b\\w+\\b:[A-Z]\\w*\\s+{.*})\\))|((?<=\\(\\w+)\\))|((?<=\\(:[A-Z]\\w*)\\))|((?<=\\(\\b\\w+\\b:[A-Z]\\w*)\\))",
 			"patterns": [
+				{
+					"name": "entity.name.class",
+					"match": "(?<=:)\\b\\w+"
+				},
 				{
 					"name": "entity.name.variable.cypher",
 					"match": "\\w+"
 				},
-				{ "include": "#functions" },
-				{ "include": "#objects" }
+				{
+					"include": "#functions"
+				},
+				{
+					"include": "#objects"
+				},
+				{
+					"include": "#strings"
+				}
 			]
 		},
 		"functions": {
@@ -60,17 +97,27 @@
 				}
 			},
 			"patterns": [
-				{ "include": "#strings" },
-				{ "include": "#variables" },
-				{ "include": "#objects" },
-				{ "include": "#numbers" }
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#variables"
+				},
+				{
+					"include": "#objects"
+				},
+				{
+					"include": "#numbers"
+				}
 			]
 		},
 		"variables": {
-			"patterns": [{
-				"name": "entity.name.variable.cypher",
-				"match": "\\w+"
-			}]
+			"patterns": [
+				{
+					"name": "entity.name.variable.cypher",
+					"match": "\\w+"
+				}
+			]
 		},
 		"objects": {
 			"name": "meta.object.cypher",
@@ -81,8 +128,12 @@
 					"name": "entity.name.tag.cypher",
 					"match": "\\w+(\\s?):"
 				},
-				{ "include": "#numbers" },
-				{ "include": "#variables" }
+				{
+					"include": "#numbers"
+				},
+				{
+					"include": "#variables"
+				}
 			]
 		},
 		"strings": {
