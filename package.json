@@ -3,6 +3,9 @@
     "displayName": "Cypher Language Support",
     "description": "Syntax Highlighting and auto-completion for the Cypher Query Language.",
     "version": "0.0.1",
+    "repository": {
+        "url": "https://github.com/Rukkaitto/cypher-language-support"
+    },
     "publisher": "LucasGoudin",
     "engines": {
         "vscode": "^1.56.0"
