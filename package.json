@@ -12,12 +12,12 @@
         "onLanguage:cypher"
     ],
     "engines": {
-        "vscode": "^1.56.0"
+        "vscode": "^1.0.0"
     },
     "categories": [
         "Programming Languages"
     ],
-    "main": "./src/extension.js",
+    "main": "./out/extension.js",
     "contributes": {
         "languages": [
             {
