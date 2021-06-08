@@ -54,7 +54,7 @@
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
+        "compile": "tsc -p ./ --outDir ./out",
         "watch": "tsc -watch -p ./ --outDir ./out"
     }
 }
