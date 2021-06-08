@@ -3,6 +3,12 @@
 	"name": "Cypher Query Language",
 	"patterns": [
 		{
+			"include": "#objects"
+		},
+		{
+			"include": "#comments"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
@@ -24,21 +30,32 @@
 			"include": "#functions"
 		},
 		{
+			"include": "#parameters"
+		},
+		{
 			"include": "#variables"
 		},
 		{
-			"include": "#objects"
+			"include": "#parameters"
 		},
 		{
 			"include": "#strings"
 		}
 	],
 	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.cypher",
+					"match": "\/\/.*$"
+				}
+			]
+		},
 		"keywords": {
 			"patterns": [
 				{
 					"name": "keyword.control.cypher",
-					"match": "\\b(?<!\\.)(?i)(match|optional|with|call|yield|where|foreach|and|or|as|return|distinct|case|when|end|is|then|else|limit|create|merge|on|update|set|order|by|asc|desc|constraint|not|exists|if|assert|node|key|unique|index|delete|detach|drop|load|csv|ascending|descending|remove|relationship|show|exist|constraint|constraints|brief|verbose|output|btree|all|indexes|skip|union|unwind|use|using|seek|join|periodic|commit|scan|in)\\b"
+					"match": "\\b(?<!\\.)(?i)(match|optional|with|call|yield|where|foreach|and|or|as|return|distinct|case|when|end|is|then|else|limit|create|merge|on|update|set|order|by|asc|desc|constraint|not|exists|if|assert|node|key|unique|index|delete|detach|drop|load|csv|ascending|descending|remove|relationship|show|exist|constraint|constraints|brief|verbose|output|btree|all|indexes|skip|union|unwind|use|using|seek|join|periodic|commit|scan|in|contains)\\b"
 				}
 			]
 		},
@@ -61,7 +78,7 @@
 		"numbers": {
 			"patterns": [
 				{
-					"name": "constant.numeric",
+					"name": "constant.numeric.cypher",
 					"match": "\\b[0-9]+\\b"
 				}
 			]
@@ -72,8 +89,11 @@
 			"end": "((?<=\\(\\b\\w+\\b:[A-Z]\\w*\\s+{.*})\\))|((?<=\\(\\w+)\\))|((?<=\\(:[A-Z]\\w*)\\))|((?<=\\(\\b\\w+\\b:[A-Z]\\w*)\\))",
 			"patterns": [
 				{
-					"name": "entity.name.class",
+					"name": "entity.name.class.cypher",
 					"match": "(?<=:)\\b\\w+"
+				},
+				{
+					"include": "#parameters"
 				},
 				{
 					"include": "#variables"
@@ -117,13 +137,22 @@
 					"include": "#strings"
 				},
 				{
-					"include": "#variables"
-				},
-				{
 					"include": "#objects"
 				},
 				{
 					"include": "#numbers"
+				},
+				{
+					"include": "#keywords"
+				},
+				{
+					"include": "#constants"
+				},
+				{
+					"include": "#parameters"
+				},
+				{
+					"include": "#variables"
 				}
 			]
 		},
@@ -135,6 +164,14 @@
 				}
 			]
 		},
+		"parameters": {
+			"patterns": [
+				{
+					"name": "entity.name.tag",
+					"match": "(?<=\\.)\\w+"
+				}
+			]
+		},
 		"objects": {
 			"name": "meta.object.cypher",
 			"begin": "{",
@@ -142,7 +179,7 @@
 			"patterns": [
 				{
 					"name": "entity.name.tag.cypher",
-					"match": "\\w+(\\s?):"
+					"match": "\\w+(\\s*):"
 				},
 				{
 					"include": "#numbers"
@@ -151,7 +188,16 @@
 					"include": "#functions"
 				},
 				{
+					"include": "#constants"
+				},
+				{
+					"include": "#parameters"
+				},
+				{
 					"include": "#variables"
+				},
+				{
+					"include": "#strings"
 				}
 			]
 		},
