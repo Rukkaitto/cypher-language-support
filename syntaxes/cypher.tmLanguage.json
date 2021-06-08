@@ -90,7 +90,7 @@
 			"patterns": [
 				{
 					"name": "entity.name.class.cypher",
-					"match": "(?<=:)\\b\\w+"
+					"match": "(?<=:)\\s*\\b\\w+"
 				},
 				{
 					"include": "#parameters"
@@ -116,7 +116,7 @@
 			"patterns": [
 				{
 					"name": "markup.bold",
-					"match": "(?<=:)\\b\\w+"
+					"match": "(?<=:)\\s*\\b\\w+"
 				},
 				{
 					"include": "#variables"
