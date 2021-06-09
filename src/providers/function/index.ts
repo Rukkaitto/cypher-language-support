@@ -25,7 +25,6 @@ export class FunctionProvider {
 
             const word = document.getText(range);
             const wordParts = word.split(".");
-            console.log(word);
             const func = getFunction(functions, wordParts);
 
             const name = new MarkdownString().appendCodeblock(func.name, Language.Cypher);
