@@ -3,46 +3,50 @@
 	"name": "Cypher Query Language",
 	"patterns": [
 		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#basePatterns"
+		},
+		{
 			"include": "#objects"
 		},
 		{
 			"include": "#comments"
 		},
 		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#classes"
-		},
-		{
-			"include": "#constants"
-		},
-		{
-			"include": "#numbers"
-		},
-		{
 			"include": "#nodes"
 		},
 		{
 			"include": "#relationships"
-		},
-		{
-			"include": "#functions"
-		},
-		{
-			"include": "#parameters"
-		},
-		{
-			"include": "#variables"
-		},
-		{
-			"include": "#parameters"
-		},
-		{
-			"include": "#strings"
 		}
 	],
 	"repository": {
+		"basePatterns": {
+			"patterns": [
+				{
+					"include": "#constants"
+				},
+				{
+					"include": "#classes"
+				},
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#numbers"
+				},
+				{
+					"include": "#parameters"
+				},
+				{
+					"include": "#variables"
+				}
+			]
+		},
 		"comments": {
 			"patterns": [
 				{
@@ -71,7 +75,7 @@
 			"patterns": [
 				{
 					"name": "constant.language.cypher",
-					"match": "\\b(?i)(true|false)\\b"
+					"match": "\\b(?i)(true|false|null)\\b"
 				}
 			]
 		},
@@ -93,19 +97,16 @@
 					"match": "(?<=:)\\s*\\b\\w+"
 				},
 				{
-					"include": "#parameters"
-				},
-				{
-					"include": "#variables"
-				},
-				{
 					"include": "#functions"
 				},
 				{
 					"include": "#objects"
 				},
 				{
-					"include": "#strings"
+					"include": "#keywords"
+				},
+				{
+					"include": "#basePatterns"
 				}
 			]
 		},
@@ -119,7 +120,10 @@
 					"match": "(?<=:)\\s*\\b\\w+"
 				},
 				{
-					"include": "#variables"
+					"include": "#keywords"
+				},
+				{
+					"include": "#basePatterns"
 				}
 			]
 		},
@@ -134,25 +138,13 @@
 			},
 			"patterns": [
 				{
-					"include": "#strings"
-				},
-				{
 					"include": "#objects"
-				},
-				{
-					"include": "#numbers"
 				},
 				{
 					"include": "#keywords"
 				},
 				{
-					"include": "#constants"
-				},
-				{
-					"include": "#parameters"
-				},
-				{
-					"include": "#variables"
+					"include": "#basePatterns"
 				}
 			]
 		},
@@ -182,22 +174,16 @@
 					"match": "\\w+(\\s*):"
 				},
 				{
-					"include": "#numbers"
+					"include": "#objects"
 				},
 				{
 					"include": "#functions"
 				},
 				{
-					"include": "#constants"
+					"include": "#keywords"
 				},
 				{
-					"include": "#parameters"
-				},
-				{
-					"include": "#variables"
-				},
-				{
-					"include": "#strings"
+					"include": "#basePatterns"
 				}
 			]
 		},
