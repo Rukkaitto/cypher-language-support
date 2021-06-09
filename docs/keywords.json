@@ -1,0 +1,191 @@
+[
+    {
+        "name": "MATCH",
+        "description": "Specify the patterns to search for in the database.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/match/#query-match"
+    },
+    {
+        "name": "OPTIONAL MATCH",
+        "description": "Specify the patterns to search for in the database while using `nulls` for missing parts of the pattern.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/optional-match/#query-optional-match"
+    },
+    {
+        "name": "LIMIT",
+        "description": "A sub-clause used to constrain the number of rows in the output.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/limit/#query-limit"
+    },
+    {
+        "name": "WITH",
+        "description": "Allows query parts to be chained together, piping the results from one to be used as starting points or criteria in the next.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/with/#query-with"
+    },
+    {
+        "name": "RETURN",
+        "description": "Defines what to include in the query result set.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/return/#query-return"
+    },
+    {
+        "name": "DELETE",
+        "description": "Delete nodes, relationships or paths. Any node to be deleted must also have all associated relationships explicitly deleted.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/delete/#query-delete"
+    },
+    {
+        "name": "DETACH DELETE",
+        "description": "Delete a node or set of nodes. All associated relationships will automatically be deleted.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/delete/#query-delete"
+    },
+    {
+        "name": "FOREACH",
+        "description": "Update data within a list, whether components of a path, or the result of aggregation.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/foreach/#query-foreach"
+    },
+    {
+        "name": "CREATE",
+        "description": "Create nodes and relationships.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/create/#query-create"
+    },
+    {
+        "name": "MERGE",
+        "description": "Ensures that a pattern exists in the graph. Either the pattern already exists, or it needs to be created.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/merge/#query-merge"
+    },
+    {
+        "name": "ON CREATE",
+        "description": "Used in conjunction with `MERGE`, specifying the actions to take if the pattern needs to be created.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/merge/#query-merge-on-create-on-match"
+    },
+    {
+        "name": "ON MATCH",
+        "description": "Used in conjunction with `MERGE`, specifying the actions to take if the pattern already exists.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/merge/#query-merge-on-create-on-match"
+    },
+    {
+        "name": "ORDER BY",
+        "description": "A sub-clause following `RETURN` or `WITH`, specifying that the output should be sorted in either ascending (the default) or descending order.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/order-by/#query-order"
+    },
+    {
+        "name": "SET",
+        "description": "Update labels on nodes and properties on nodes and relationships.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/set/#query-set"
+    },
+    {
+        "name": "WHERE",
+        "description": "A sub-clause used to add constraints to the patterns in a `MATCH` or `OPTIONAL MATCH` clause, or to filter the results of a `WITH` clause.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/where/#query-where"
+    },
+    {
+        "name": "EXISTS",
+        "description": "An existential sub-query used to filter the results of a `MATCH`, `OPTIONAL MATCH` or `WITH` clause.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/where/#existential-subqueries"
+    },
+    {
+        "name": "AND",
+        "description": "Conjuction.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/syntax/operators/#query-operators-boolean"
+    },
+    {
+        "name": "CONTAINS",
+        "description": "Case-sensitive inclusion search.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/syntax/operators/#query-operator-comparison-string-specific"
+    },
+    {
+        "name": "DISTINCT",
+        "description": "Duplicate removal.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/syntax/operators/#query-operators-aggregation"
+    },
+    {
+        "name": "ENDS WITH",
+        "description": "Case-sensitive suffix search.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/syntax/operators/#query-operator-comparison-string-specific"
+    },
+    {
+        "name": "IN",
+        "description": "List element existence check.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/syntax/operators/#query-operators-list"
+    },
+    {
+        "name": "IS NOT NULL",
+        "description": "Non-`null` check.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/syntax/operators/#query-operators-comparison"
+    },
+    {
+        "name": "IS NULL",
+        "description": "`null` check.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/syntax/operators/#query-operators-comparison"
+    },
+    {
+        "name": "NOT",
+        "description": "Negation.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/syntax/operators/#query-operators-boolean"
+    },
+    {
+        "name": "OR",
+        "description": "Disjunction.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/syntax/operators/#query-operators-boolean"
+    },
+    {
+        "name": "STARTS WITH",
+        "description": "Case-sensitive prefix search.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/syntax/operators/#query-operator-comparison-string-specific"
+    },
+    {
+        "name": "XOR",
+        "description": "Exclusive disjunction.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/syntax/operators/#query-operators-boolean"
+    },
+    {
+        "name": "AS",
+        "description": "Alias."
+    },
+    {
+        "name": "ASC",
+        "description": "Ascending order.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/order-by/#query-order"
+    },
+    {
+        "name": "DESC",
+        "description": "Descending order.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/order-by/#query-order"
+    },
+    {
+        "name": "CASE",
+        "description": "A generic conditional expression, similar to if/else statements available in other languages.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/syntax/expressions/#query-syntax-case"
+    },
+    {
+        "name": "LOAD CSV",
+        "description": "Use when importing data from CSV files.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/load-csv/#query-load-csv"
+    },
+    {
+        "name": "REMOVE",
+        "description": "Remove properties and labels from nodes and relationships.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/remove/#query-remove"
+    },
+    {
+        "name": "SHOW",
+        "description": "List constraints or indexes in the database, either all or filtered on type/B-tree only.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/administration/constraints/#administration-constraints-list-constraint"
+    },
+    {
+        "name": "SKIP",
+        "description": "A sub-clause defining from which row to start including the rows in the output.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/skip/#query-skip"
+    },
+    {
+        "name": "UNION",
+        "description": "Combines the result of multiple queries. Duplicates are removed.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/union/#query-union"
+    },
+    {
+        "name": "UNION ALL",
+        "description": "Combines the result of multiple queries. Duplicates are retained.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/union/#query-union"
+    },
+    {
+        "name": "UNWIND",
+        "description": "Expands a list into a sequence of rows.",
+        "link": "https://neo4j.com/docs/cypher-manual/current/clauses/unwind/#query-unwind"
+    }
+]
