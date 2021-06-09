@@ -1,3 +1,8 @@
 export enum Docs {
-    Keywords = "keywords"
+    Keywords = "keywords",
+    Functions = "functions",
+}
+
+export enum Language {
+    Cypher = "cypher"
 }
