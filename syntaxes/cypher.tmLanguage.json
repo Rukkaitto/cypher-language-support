@@ -59,7 +59,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.cypher",
-					"match": "\\b(?<!\\.)(?i)(match|optional|with|call|yield|where|foreach|and|or|as|return|distinct|case|when|end|is|then|else|limit|create|merge|on|update|set|order|by|asc|desc|constraint|not|exists|if|assert|node|key|unique|index|delete|detach|drop|load|csv|ascending|descending|remove|relationship|show|exist|constraint|constraints|brief|verbose|output|btree|all|indexes|skip|union|unwind|use|using|seek|join|periodic|commit|scan|in|contains)\\b"
+					"match": "(?<!\\.)(?i)(match|optional|with|call|yield|where|foreach|and|or|as|return|distinct|case|when|end|is|then|else|limit|create|merge|on|update|set|order|by|asc|desc|constraint|not|exists|if|assert|node|key|unique|index|delete|detach|drop|load|csv|ascending|descending|remove|relationship|show|exist|constraint|constraints|brief|verbose|output|btree|all|indexes|skip|union|unwind|use|using|seek|join|periodic|commit|scan|in|contains)\\b(?!(:|\\.))"
 				}
 			]
 		},
@@ -89,8 +89,8 @@
 		},
 		"nodes": {
 			"name": "meta.node.cypher",
-			"begin": "(\\((?=\\b\\w+\\b\\s*:\\s*[A-Z]\\w*\\s+{.*}\\)))|(\\((?=\\w+\\)))|(\\((?=\\s*:\\s*[A-Z]\\w*\\)))|(\\((?=\\b\\w+\\b\\s*:\\s*[A-Z]\\w*\\)))",
-			"end": "((?<=\\(\\b\\w+\\b\\s*:\\s*[A-Z]\\w*\\s+{.*})\\))|((?<=\\(\\w+)\\))|((?<=\\(\\s*:\\s*[A-Z]\\w*)\\))|((?<=\\(\\b\\w+\\b\\s*:\\s*[A-Z]\\w*)\\))",
+			"begin": "(\\((?=\\b\\w+\\b\\s*:\\s*[A-Z]\\w*\\s+{.*}\\)))|(\\((?=\\w+\\)))|(\\((?=\\s*:\\s*[A-Z]\\w*\\s+{.*}\\)))|(\\((?=\\b\\w+\\b\\s*:\\s*[A-Z]\\w*\\)))",
+			"end": "((?<=\\(\\b\\w+\\b\\s*:\\s*[A-Z]\\w*\\s+{.*})\\))|((?<=\\(\\w+)\\))|((?<=\\(\\s*:\\s*[A-Z]\\w*\\s+{.*})\\))|((?<=\\(\\b\\w+\\b\\s*:\\s*[A-Z]\\w*)\\))",
 			"patterns": [
 				{
 					"name": "entity.name.class.cypher",

@@ -1,4 +1,4 @@
-import { CompletionItem, Range, CompletionItemKind, Position, Hover, workspace, MarkdownString } from "vscode";
+import { CompletionItem, Range, CompletionItemKind, Position, Hover, workspace, MarkdownString, CompletionItemTag } from "vscode";
 import { Docs } from "../enums";
 import { Keyword } from "../interfaces";
 

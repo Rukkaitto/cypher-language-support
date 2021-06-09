@@ -1,4 +1,4 @@
-import { CompletionItem, CompletionItemKind, ExtensionContext, Hover, languages, MarkdownString,  } from 'vscode';
+import { CompletionItem, CompletionItemKind, ExtensionContext, Hover, languages, MarkdownString, CompletionItemProvider } from 'vscode';
 import { Docs } from './enums';
 import { Keyword } from './interfaces';
 import { completionItem, endsWith, getDocs } from './utils';
@@ -9,7 +9,8 @@ export function activate(context: ExtensionContext) {
         provideHover(document, position, token) {
             const keywords = getDocs<Keyword>(Docs.Keywords);
             const keywordsCases = keywords.map(keyword => keyword.name.toLowerCase()).join("|");
-            const keywordsRegExp = `\\b(${keywordsCases})\\b`;
+            const keywordsRegExp = `(?<!\\.)\\b(${keywordsCases})\\b(?!(:|\\.))`;
+            console.log(keywordsRegExp);
 
             const range = document.getWordRangeAtPosition(position, RegExp(keywordsRegExp, 'i'));
 
@@ -37,7 +38,7 @@ export function activate(context: ExtensionContext) {
         }
     });
 
-    const keywordCompletionItemProvider = languages.registerCompletionItemProvider('*', {
+    const keywordCompletionItemProvider = languages.registerCompletionItemProvider('cypher', {
         provideCompletionItems(document, position, token, context) {
             const keywords = getDocs<Keyword>(Docs.Keywords);
             const range = document.getWordRangeAtPosition(position, RegExp('\\w+(\\.\\w+)*'));
