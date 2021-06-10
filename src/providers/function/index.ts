@@ -39,4 +39,47 @@ export class FunctionProvider {
         }
     });
 
+    static baseCompletionitem = languages.registerCompletionItemProvider(Language.Cypher, {
+        provideCompletionItems(document, position, token, context) {
+            const functions = getDocs<any>(Docs.Functions);
+            
+            const baseElements = Object.keys(functions);
+            const completionItems = baseElements.map(baseElement => {
+                if(baseElement === "apoc") {
+                    return completionItem({name: baseElement, description: ""}, CompletionItemKind.Class);
+                } else {
+                    const func = getFunction(functions, [baseElement]) as Function;
+                    return completionItem({name: baseElement, description: func.description, detail: func.name}, CompletionItemKind.Function);
+                }
+            });
+            return completionItems;
+        }
+    });
+
+    static dotCompletionItem = languages.registerCompletionItemProvider(Language.Cypher, {
+        provideCompletionItems(document, position, token, context) {
+            const functions = getDocs<any>(Docs.Functions);
+            const linePrefix = document.lineAt(position).text.substr(0, position.character);
+
+            const matches = linePrefix.match(RegExp("(\\b\\w+\\b\\.)*(\\b\\w+\\b)+(?=\\.$)"));
+            const completionItems: CompletionItem[] = [];
+
+            if(matches) {
+                const functionParts = matches[0].split(".");
+                const func = getFunction(functions, functionParts);
+
+                for(const [key, value] of Object.entries(func)) {
+                    let item: CompletionItem;
+                    if(!value.name) {
+                        item = completionItem({name: key, description: ""}, CompletionItemKind.Function);
+                    } else {
+                        item = completionItem({name: key, description: value.description, detail: value.name}, CompletionItemKind.Function);
+                    }
+                    completionItems.push(item);
+                }
+            }
+
+            return completionItems;
+        }
+    }, '.');
 }

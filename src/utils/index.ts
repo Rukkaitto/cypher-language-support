@@ -6,9 +6,11 @@ export const endsWith = (linePrefix: string, text: string) => {
     return linePrefix.endsWith(text);
 }
 
-export const completionItem = ({name, description}: {name: string, description: string}, kind: CompletionItemKind) => {
+export const completionItem = ({name, description, insertText, detail}: {name: string, description: string, insertText?: string, detail?: string}, kind: CompletionItemKind) => {
     const item = new CompletionItem(name, kind);
-    item.documentation = description
+    item.documentation = description;
+    item.insertText = insertText;
+    item.detail = detail;
     return item;
 }
 
