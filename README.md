@@ -2,6 +2,7 @@
 
 ## Features
 
+* Syntax highlighting.
 * Hover information for keywords. (MATCH, RETURN, WITH...)
 * Intellisense for keywords.
 * Hover information for functions. (abs(), cos()...)
