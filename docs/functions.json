@@ -2739,36 +2739,28 @@
       }
     },
     "help": {
-      "undefined": {
-        "name": "apoc.help(proc :: STRING?) :: (type :: STRING?, name :: STRING?, text :: STRING?, signature :: STRING?, roles :: LIST? OF STRING?, writes :: BOOLEAN?, core :: BOOLEAN?)\n",
-        "description": "Provides descriptions of available procedures. To narrow the results, supply a search string. To also search in the description text, append + to the end of the search string.\n",
-        "deprecated": false,
-        "link": "https://neo4j.com/labs/apoc/4.1/overview/apoc/apoc.help/"
-      }
+      "name": "apoc.help(proc :: STRING?) :: (type :: STRING?, name :: STRING?, text :: STRING?, signature :: STRING?, roles :: LIST? OF STRING?, writes :: BOOLEAN?, core :: BOOLEAN?)\n",
+      "description": "Provides descriptions of available procedures. To narrow the results, supply a search string. To also search in the description text, append + to the end of the search string.\n",
+      "deprecated": false,
+      "link": "https://neo4j.com/labs/apoc/4.1/overview/apoc/apoc.help/"
     },
     "when": {
-      "undefined": {
-        "name": "apoc.when(condition :: BOOLEAN?, ifQuery :: STRING?, elseQuery =  :: STRING?, params = {} :: MAP?) :: (value :: MAP?)\n",
-        "description": "apoc.when(condition, ifQuery, elseQuery:'', params:{}) yield value - based on the conditional, executes read-only ifQuery or elseQuery with the given parameters\n",
-        "deprecated": false,
-        "link": "https://neo4j.com/labs/apoc/4.1/overview/apoc/apoc.when/"
-      }
+      "name": "apoc.when(condition :: BOOLEAN?, ifQuery :: STRING?, elseQuery =  :: STRING?, params = {} :: MAP?) :: (value :: MAP?)\n",
+      "description": "apoc.when(condition, ifQuery, elseQuery:'', params:{}) yield value - based on the conditional, executes read-only ifQuery or elseQuery with the given parameters\n",
+      "deprecated": false,
+      "link": "https://neo4j.com/labs/apoc/4.1/overview/apoc/apoc.when/"
     },
     "case": {
-      "undefined": {
-        "name": "apoc.case(conditionals :: LIST? OF ANY?, elseQuery =  :: STRING?, params = {} :: MAP?) :: (value :: MAP?)\n",
-        "description": "apoc.case([condition, query, condition, query, ...], elseQuery:'', params:{}) yield value - given a list of conditional / read-only query pairs, executes the query associated with the first conditional evaluating to true (or the else query if none are true) with the given parameters\n",
-        "deprecated": false,
-        "link": "https://neo4j.com/labs/apoc/4.1/overview/apoc/apoc.case/"
-      }
+      "name": "apoc.case(conditionals :: LIST? OF ANY?, elseQuery =  :: STRING?, params = {} :: MAP?) :: (value :: MAP?)\n",
+      "description": "apoc.case([condition, query, condition, query, ...], elseQuery:'', params:{}) yield value - given a list of conditional / read-only query pairs, executes the query associated with the first conditional evaluating to true (or the else query if none are true) with the given parameters\n",
+      "deprecated": false,
+      "link": "https://neo4j.com/labs/apoc/4.1/overview/apoc/apoc.case/"
     },
     "version": {
-      "undefined": {
-        "name": "apoc.version() :: (STRING?)\n",
-        "description": "RETURN apoc.version() | return the current APOC installed version\n",
-        "deprecated": false,
-        "link": "https://neo4j.com/labs/apoc/4.1/overview/apoc/apoc.version/"
-      }
+      "name": "apoc.version() :: (STRING?)\n",
+      "description": "RETURN apoc.version() | return the current APOC installed version\n",
+      "deprecated": false,
+      "link": "https://neo4j.com/labs/apoc/4.1/overview/apoc/apoc.version/"
     },
     "graph": {
       "fromData": {
@@ -3022,5 +3014,629 @@
         "link": "https://neo4j.com/labs/apoc/4.1/overview/apoc.bitwise/apoc.bitwise.op/"
       }
     }
+  },
+  "abs": {
+    "name": "abs()",
+    "description": "Returns the absolute value of a number.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-numeric/#functions-abs"
+  },
+  "acos": {
+    "name": "acos()",
+    "description": "Returns the arccosine of a number in radians.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-trigonometric/#functions-acos"
+  },
+  "all": {
+    "name": "all()",
+    "description": "Tests whether the predicate holds for all elements in a list.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/predicate/#functions-all"
+  },
+  "any": {
+    "name": "any()",
+    "description": "Tests whether the predicate holds for at least one element in a list.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/predicate/#functions-any"
+  },
+  "asin": {
+    "name": "asin()",
+    "description": "Returns the arcsine of a number in radians.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-trigonometric/#functions-asin"
+  },
+  "atan": {
+    "name": "atan()",
+    "description": "Returns the arctangent of a number in radians.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-trigonometric/#functions-atan"
+  },
+  "atan2": {
+    "name": "atan2()",
+    "description": "Returns the arctangent2 of a set of coordinates in radians.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-trigonometric/#functions-atan2"
+  },
+  "avg": {
+    "name": "avg()",
+    "description": "Returns the average of a set of values.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/aggregating/#functions-avg"
+  },
+  "ceil": {
+    "name": "ceil()",
+    "description": "Returns the smallest floating point number that is greater than or equal to a number and equal to a mathematical integer.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-numeric/#functions-ceil"
+  },
+  "coalesce": {
+    "name": "coalesce()",
+    "description": "Returns the first non-`null` value in a list of expressions.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/scalar/#functions-coalesce"
+  },
+  "collect": {
+    "name": "collect()",
+    "description": "Returns a list containing the values returned by an expression.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/aggregating/#functions-collect"
+  },
+  "cos": {
+    "name": "cos()",
+    "description": "Returns the cosine of a number.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-trigonometric/#functions-cos"
+  },
+  "cot": {
+    "name": "cot()",
+    "description": "Returns the cotangent of a number.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-trigonometric/#functions-cot"
+  },
+  "count": {
+    "name": "count()",
+    "description": "Returns the number of values or rows.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/aggregating/#functions-count"
+  },
+  "date": {
+    "name": "date()",
+    "description": "Returns the current *Date*.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-date-current"
+  },
+  "date.realtime": {
+    "name": "date.realtime()",
+    "description": "Returns the current *Date* using the `realtime` clock.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-date-current-realtime"
+  },
+  "date.statement": {
+    "name": "date.statement()",
+    "description": "Returns the current *Date* using the `statement` clock.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-date-current-statement"
+  },
+  "date.transaction": {
+    "name": "date.transaction()",
+    "description": "Returns the current *Date* using the `transaction` clock.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-date-current-transaction"
+  },
+  "date.truncate": {
+    "name": "date.truncate()",
+    "description": "Returns a *Date* obtained by truncating a value at a specific component boundary. [Truncation summary](https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-temporal-truncate-overview).",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-date-truncate"
+  },
+  "datetime": {
+    "name": "datetime()",
+    "description": "Returns the current *DateTime*.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-datetime-current"
+  },
+  "datetime.realtime": {
+    "name": "datetime.realtime()",
+    "description": "Returns the current *DateTime* using the `realtime` clock.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-datetime-current-realtime"
+  },
+  "datetime.statement": {
+    "name": "datetime.statement()",
+    "description": "Returns the current *DateTime* using the `statement` clock.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-datetime-current-statement"
+  },
+  "datetime.transaction": {
+    "name": "datetime.transaction()",
+    "description": "Returns the current *DateTime* using the `transaction` clock.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-datetime-current-transaction"
+  },
+  "datetime.truncate": {
+    "name": "datetime.truncate()",
+    "description": "Returns a *DateTime* obtained by truncating a value at a specific component boundary. [Truncation summary](https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-temporal-truncate-overview).",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-datetime-truncate"
+  },
+  "degrees": {
+    "name": "degrees()",
+    "description": "Converts radians to degrees.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-trigonometric/#functions-degrees"
+  },
+  "distance": {
+    "name": "distance()",
+    "description": "Returns a floating point number representing the geodesic distance between any two points in the same CRS.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/spatial/#functions-distance"
+  },
+  "duration": {
+    "name": "duration({map})",
+    "description": "Returns a *Duration* from a map of its components.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/duration/#functions-duration-create-components"
+  },
+  "duration.between": {
+    "name": "duration.between()",
+    "description": "Returns a *Duration* equal to the difference between two given instants.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/duration/#functions-duration-between"
+  },
+  "duration.inDays": {
+    "name": "duration.inDays()",
+    "description": "Returns a *Duration* equal to the difference in whole days or weeks between two given instants.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/duration/#functions-duration-indays"
+  },
+  "duration.inMonths": {
+    "name": "duration.inMonths()",
+    "description": "Returns a *Duration* equal to the difference in whole months, quarters or years between two given instants.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/duration/#functions-duration-inmonths"
+  },
+  "duration.inSeconds": {
+    "name": "duration.inSeconds()",
+    "description": "Returns a *Duration* equal to the difference in seconds and fractions of seconds, or minutes or hours, between two given instants.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/duration/#functions-duration-inseconds"
+  },
+  "e": {
+    "name": "e()",
+    "description": "Returns the base of the natural logarithm, `e`.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-logarithmic/#functions-e"
+  },
+  "endNode": {
+    "name": "endNode()",
+    "description": "Returns the end node of a relationship.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/scalar/#functions-endnode"
+  },
+  "exists": {
+    "name": "exists()",
+    "description": "Returns true if a match for the pattern exists in the graph, or if the specified property exists in the node, relationship or map.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/predicate/#functions-exists"
+  },
+  "exp": {
+    "name": "exp()",
+    "description": "Returns `e^n`, where `e` is the base of the natural logarithm, and `n` is the value of the argument expression.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-logarithmic/#functions-exp"
+  },
+  "floor": {
+    "name": "floor()",
+    "description": "Returns the largest floating point number that is less than or equal to a number and equal to a mathematical integer.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-numeric/#functions-floor"
+  },
+  "haversin": {
+    "name": "haversin()",
+    "description": "Returns half the versine of a number.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-trigonometric/#functions-haversin"
+  },
+  "head": {
+    "name": "head()",
+    "description": "Returns the first element in a list.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/scalar/#functions-head"
+  },
+  "id": {
+    "name": "id()",
+    "description": "Returns the id of a relationship or node.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/scalar/#functions-id"
+  },
+  "keys": {
+    "name": "keys()",
+    "description": "Returns a list containing the string representations for all the property names of a node, relationship, or map.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/list/#functions-keys"
+  },
+  "labels": {
+    "name": "labels()",
+    "description": "Returns a list containing the string representations for all the labels of a node.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/list/#functions-labels"
+  },
+  "last": {
+    "name": "last()",
+    "description": "Returns the last element in a list.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/scalar/#functions-last"
+  },
+  "left": {
+    "name": "left()",
+    "description": "Returns a string containing the specified number of leftmost characters of the original string.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/string/#functions-left"
+  },
+  "length": {
+    "name": "length()",
+    "description": "Returns the length of a path.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/scalar/#functions-length"
+  },
+  "localdatetime": {
+    "name": "localdatetime()",
+    "description": "Returns the current *LocalDateTime*.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-localdatetime-current"
+  },
+  "localdatetime.realtime": {
+    "name": "localdatetime.realtime()",
+    "description": "Returns the current *LocalDateTime* using the `realtime` clock.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-localdatetime-current-realtime"
+  },
+  "localdatetime.statement": {
+    "name": "localdatetime.statement()",
+    "description": "Returns the current *LocalDateTime* using the `statement` clock.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-localdatetime-current-statement"
+  },
+  "localdatetime.transaction": {
+    "name": "localdatetime.transaction()",
+    "description": "Returns the current *LocalDateTime* using the `transaction` clock.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-localdatetime-current-transaction"
+  },
+  "localdatetime.truncate": {
+    "name": "localdatetime.truncate()",
+    "description": "Returns a *LocalDateTime* obtained by truncating a value at a specific component boundary. [Truncation summary](https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-temporal-truncate-overview).",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-localdatetime-truncate"
+  },
+  "localtime": {
+    "name": "localtime()",
+    "description": "Returns the current *LocalTime*.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-localtime-current"
+  },
+  "localtime.realtime": {
+    "name": "localtime.realtime()",
+    "description": "Returns the current *LocalTime* using the `realtime` clock.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-localtime-current-realtime"
+  },
+  "localtime.statement": {
+    "name": "localtime.statement()",
+    "description": "Returns the current *LocalTime* using the `statement` clock.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-localtime-current-statement"
+  },
+  "localtime.transaction": {
+    "name": "localtime.transaction()",
+    "description": "Returns the current *LocalTime* using the `transaction` clock.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-localtime-current-transaction"
+  },
+  "localtime.truncate": {
+    "name": "localtime.truncate()",
+    "description": "Returns a *LocalTime* obtained by truncating a value at a specific component boundary. [Truncation summary](https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-temporal-truncate-overview).",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-localtime-truncate"
+  },
+  "log": {
+    "name": "log()",
+    "description": "Returns the natural logarithm of a number.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-logarithmic/#functions-log"
+  },
+  "log10": {
+    "name": "log10()",
+    "description": "Returns the common logarithm (base 10) of a number.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-logarithmic/#functions-log10"
+  },
+  "lTrim": {
+    "name": "lTrim()",
+    "description": "Returns the original string with leading whitespace removed.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/string/#functions-ltrim"
+  },
+  "max": {
+    "name": "max()",
+    "description": "Returns the maximum value in a set of values.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/aggregating/#functions-max"
+  },
+  "min": {
+    "name": "min()",
+    "description": "Returns the minimum value in a set of values.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/aggregating/#functions-min"
+  },
+  "nodes": {
+    "name": "nodes()",
+    "description": "Returns a list containing all the nodes in a path.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/list/#functions-nodes"
+  },
+  "none": {
+    "name": "none()",
+    "description": "Returns true if the predicate holds for no element in a list.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/predicate/#functions-none"
+  },
+  "percentileCont": {
+    "name": "percentileCont()",
+    "description": "Returns the percentile of the given value over a group using linear interpolation.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/aggregating/#functions-percentilecont"
+  },
+  "percentileDisc": {
+    "name": "percentileDisc()",
+    "description": "Returns the nearest value to the given percentile over a group using a rounding method.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/aggregating/#functions-percentiledisc"
+  },
+  "pi": {
+    "name": "pi()",
+    "description": "Returns the mathematical constant *pi*.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-trigonometric/#functions-pi"
+  },
+  "point": {
+    "name": "point() - Cartesian 2D",
+    "description": "Returns a 2D point object, given two coordinate values in the Cartesian coordinate system.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/spatial/#functions-point-cartesian-2d"
+  },
+  "properties": {
+    "name": "properties()",
+    "description": "Returns a map containing all the properties of a node or relationship.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/scalar/#functions-properties"
+  },
+  "radians": {
+    "name": "radians()",
+    "description": "Converts degrees to radians.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-trigonometric/#functions-radians"
+  },
+  "rand": {
+    "name": "rand()",
+    "description": "Returns a random floating point number in the range from 0 (inclusive) to 1 (exclusive); i.e. `[0, 1)`.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-numeric/#functions-rand"
+  },
+  "randomUUID": {
+    "name": "randomUUID()",
+    "description": "Returns a string value corresponding to a randomly-generated UUID.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/scalar/#functions-randomuuid"
+  },
+  "range": {
+    "name": "range()",
+    "description": "Returns a list comprising all integer values within a specified range.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/list/#functions-range"
+  },
+  "reduce": {
+    "name": "reduce()",
+    "description": "Runs an expression against individual elements of a list, storing the result of the expression in an accumulator.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/list/#functions-reduce"
+  },
+  "relationships": {
+    "name": "relationships()",
+    "description": "Returns a list containing all the relationships in a path.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/list/#functions-relationships"
+  },
+  "replace": {
+    "name": "replace()",
+    "description": "Returns a string in which all occurrences of a specified string in the original string have been replaced by another (specified) string.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/string/#functions-replace"
+  },
+  "reverse": {
+    "name": "reverse()",
+    "description": "Returns a list in which the order of all elements in the original list have been reversed.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/list/#functions-reverse-list"
+  },
+  "right": {
+    "name": "right()",
+    "description": "Returns a string containing the specified number of rightmost characters of the original string.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/string/#functions-right"
+  },
+  "round": {
+    "name": "round()",
+    "description": "Returns the value of the given number rounded to the nearest integer, with half-way values always rounded up.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-numeric/#functions-round1"
+  },
+  "rTrim": {
+    "name": "rTrim()",
+    "description": "Returns the original string with trailing whitespace removed.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/string/#functions-rtrim"
+  },
+  "sign": {
+    "name": "sign()",
+    "description": "Returns the signum of a number: `0` if the number is `0`, `-1` for any negative number, and `1` for any positive number.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-numeric/#functions-sign"
+  },
+  "sin": {
+    "name": "sin()",
+    "description": "Returns the sine of a number.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-trigonometric/#functions-sin"
+  },
+  "single": {
+    "name": "single()",
+    "description": "Returns true if the predicate holds for exactly one of the elements in a list.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/predicate/#functions-single"
+  },
+  "size": {
+    "name": "size()",
+    "description": "Returns the number of items in a list.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/scalar/#functions-size"
+  },
+  "split": {
+    "name": "split()",
+    "description": "Returns a list of strings resulting from the splitting of the original string around matches of the given delimiter.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/string/#functions-split"
+  },
+  "sqrt": {
+    "name": "sqrt()",
+    "description": "Returns the square root of a number.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-logarithmic/#functions-sqrt"
+  },
+  "startNode": {
+    "name": "startNode()",
+    "description": "Returns the start node of a relationship.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/scalar/#functions-startnode"
+  },
+  "stDev": {
+    "name": "stDev()",
+    "description": "Returns the standard deviation for the given value over a group for a sample of a population.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/aggregating/#functions-stdev"
+  },
+  "stDevP": {
+    "name": "stDevP()",
+    "description": "Returns the standard deviation for the given value over a group for an entire population.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/aggregating/#functions-stdevp"
+  },
+  "substring": {
+    "name": "substring()",
+    "description": "Returns a substring of the original string, beginning  with a 0-based index start and length.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/string/#functions-substring"
+  },
+  "sum": {
+    "name": "sum()",
+    "description": "Returns the sum of a set of numeric values.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/aggregating/#functions-sum"
+  },
+  "tail": {
+    "name": "tail()",
+    "description": "Returns all but the first element in a list.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/list/#functions-tail"
+  },
+  "tan": {
+    "name": "tan()",
+    "description": "Returns the tangent of a number.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/mathematical-trigonometric/#functions-tan"
+  },
+  "time": {
+    "name": "time()",
+    "description": "Returns the current *Time*.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-time-current"
+  },
+  "time.realtime": {
+    "name": "time.realtime()",
+    "description": "Returns the current *Time* using the `realtime` clock.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-time-current-realtime"
+  },
+  "time.statement": {
+    "name": "time.statement()",
+    "description": "Returns the current *Time* using the `statement` clock.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-time-current-statement"
+  },
+  "time.transaction": {
+    "name": "time.transaction()",
+    "description": "Returns the current *Time* using the `transaction` clock.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-time-current-transaction"
+  },
+  "time.truncate": {
+    "name": "time.truncate()",
+    "description": "Returns a *Time* obtained by truncating a value at a specific component boundary. [Truncation summary](https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-temporal-truncate-overview).",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/temporal/#functions-time-truncate"
+  },
+  "timestamp": {
+    "name": "timestamp()",
+    "description": "Returns the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/scalar/#functions-timestamp"
+  },
+  "toBoolean": {
+    "name": "toBoolean()",
+    "description": "Converts a string value to a boolean value.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/scalar/#functions-toboolean"
+  },
+  "toFloat": {
+    "name": "toFloat()",
+    "description": "Converts an integer or string value to a floating point number.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/scalar/#functions-tofloat"
+  },
+  "toInteger": {
+    "name": "toInteger()",
+    "description": "Converts a floating point or string value to an integer value.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/scalar/#functions-tointeger"
+  },
+  "toLower": {
+    "name": "toLower()",
+    "description": "Returns the original string in lowercase.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/string/#functions-tolower"
+  },
+  "toString": {
+    "name": "toString()",
+    "description": "Converts an integer, float, boolean or temporal (i.e. Date, Time, LocalTime, DateTime, LocalDateTime or Duration) value to a string.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/string/#functions-tostring"
+  },
+  "toUpper": {
+    "name": "toUpper()",
+    "description": "Returns the original string in uppercase.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/string/#functions-toupper"
+  },
+  "trim": {
+    "name": "trim()",
+    "description": "Returns the original string with leading and trailing whitespace removed.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/string/#functions-trim"
+  },
+  "type": {
+    "name": "type()",
+    "description": "Returns the string representation of the relationship type.",
+    "deprecated": false,
+    "link": "https://neo4j.com/docs/cypher-manual/current/functions/scalar/#functions-type"
   }
 }

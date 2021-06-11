@@ -46,10 +46,10 @@ export class FunctionProvider {
             const baseElements = Object.keys(functions);
             const completionItems = baseElements.map(baseElement => {
                 if(baseElement === "apoc") {
-                    return completionItem({name: baseElement, description: ""}, CompletionItemKind.Class);
+                    return completionItem({name: baseElement}, CompletionItemKind.Class);
                 } else {
                     const func = getFunction(functions, [baseElement]) as Function;
-                    return completionItem({name: baseElement, description: func.description, detail: func.name}, CompletionItemKind.Function);
+                    return completionItem({name: baseElement, documentation: func.description, detail: func.name}, CompletionItemKind.Function);
                 }
             });
             return completionItems;
@@ -71,9 +71,9 @@ export class FunctionProvider {
                 for(const [key, value] of Object.entries(func)) {
                     let item: CompletionItem;
                     if(!value.name) {
-                        item = completionItem({name: key, description: ""}, CompletionItemKind.Function);
+                        item = completionItem({name: key}, CompletionItemKind.Function);
                     } else {
-                        item = completionItem({name: key, description: value.description, detail: value.name}, CompletionItemKind.Function);
+                        item = completionItem({name: key, documentation: value.description, detail: value.name, deprecated: value.deprecated}, CompletionItemKind.Function);
                     }
                     completionItems.push(item);
                 }

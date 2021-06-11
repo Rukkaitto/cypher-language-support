@@ -6,11 +6,13 @@ export const endsWith = (linePrefix: string, text: string) => {
     return linePrefix.endsWith(text);
 }
 
-export const completionItem = ({name, description, insertText, detail}: {name: string, description: string, insertText?: string, detail?: string}, kind: CompletionItemKind) => {
-    const item = new CompletionItem(name, kind);
-    item.documentation = description;
+export const completionItem = ({name, documentation, insertText, detail, deprecated}: {name: string, documentation?: string, insertText?: string, detail?: string, deprecated?: boolean}, kind: CompletionItemKind) => {
+    let item = new CompletionItem(name, kind);
+
+    item.documentation = new MarkdownString(documentation);
     item.insertText = insertText;
     item.detail = detail;
+    item.tags = deprecated ? [CompletionItemTag.Deprecated] : undefined;
     return item;
 }
 
