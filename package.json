@@ -2,7 +2,7 @@
     "name": "cypher-language-support",
     "displayName": "Cypher Language Support",
     "description": "Syntax Highlighting and auto-completion for the Cypher Query Language.",
-    "version": "0.7.0",
+    "version": "1.0.0",
     "repository": {
         "url": "https://github.com/Rukkaitto/cypher-language-support"
     },
