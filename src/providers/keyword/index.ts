@@ -40,7 +40,7 @@ export class KeywordProvider {
             const completionItems: CompletionItem[] = [];
             keywords.forEach(keyword => {
                 if(keyword.name.toLowerCase().trim().includes(word.toLowerCase().trim())) {
-                    completionItems.push(completionItem(keyword, CompletionItemKind.Keyword));
+                    completionItems.push(completionItem({name: keyword.name, documentation: keyword.description}, CompletionItemKind.Keyword));
                 }
             });
         
