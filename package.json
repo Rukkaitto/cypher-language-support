@@ -37,6 +37,20 @@
                 "language": "cypher",
                 "scopeName": "source.cypher",
                 "path": "./syntaxes/cypher.tmLanguage.json"
+            },
+            {
+                "injectTo": [
+                    "source.js",
+                    "source.ts",
+                    "source.jsx",
+                    "source.tsx",
+                    "source.js.jsx",
+                    "source.python",
+                    "source.graphql",
+                    "source.gql"
+                ],
+                "scopeName": "cypher",
+                "path": "./syntaxes/cypher.embedded.json"
             }
         ],
         "commands": [
