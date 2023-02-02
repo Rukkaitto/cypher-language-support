@@ -40,6 +40,7 @@
             },
             {
                 "injectTo": [
+                    "source.cs",
                     "source.js",
                     "source.ts",
                     "source.jsx",
